@@ -1,2 +1,60 @@
 Create file name is  different
 Name file and name class are the same
+
+// MODEL
+    init class model need extends Model
+    class model has a available the method
+    declare filed $table = 'table name';
+    + find, findFirst params array
+        ['condition'=>['$filed = ?'],'bind'=>[$valuesFiled],'order'=>[$filedOrder = ''],'limit'=>[$number='']]
+    + findByID param PRIMARY KEY
+    + insert params array filedName and valuesFiled example ['id'=>'12','decription'='',..] note: id, decription is column name in table database
+    + delete param PRIMARY KEY
+    + update param PRIMARY KEY and field name, values field example (1,['decription'='',..]) note: decription is column name in table database
+    + query params command line sql and param bind in sql example ('select * from table wherr id = ?',[1])
+    + save model has  property in tabe database, you can set values of property. If property id exist is update and not exit insert
+    example:
+        * update
+        $this->id = 1;
+        this->decription = 'this is a decription';
+        ...
+        $this-> save();
+
+        * insert
+        this->decription = 'this is a decription';
+        ....
+        $this-> save();
+
+// CONTROLLER
+    controller default Home, action: index
+    Init class controller need extends controller
+    class model has a available the method
+    + view param path dislay view in forder view example: $this->view('home/index',$data = []);
+    + model param is model, call model need. example: $this->model('User');
+
+// VIEW 
+    Layout default Layout
+    You can content view in layout :
+    + layout 
+    declare 
+    <?php $this->content('head'); ?>
+    <?php $this->content('body'); ?>
+    + view
+    $this->setSiteTitle('title'); set title page
+    
+    you can append layout need call method
+    $this->start($param);  //$param is 'head' or 'body'
+    //you can write html, javascript, php. this add in layout
+
+    $this->end(); 
+
+// SESSION
+    Session::set($name,$values);
+    Session::get($name);
+    Session::exists($name);
+    Session::delete($name);
+
+// method 
+    asset($url); get resouce for public ($url get url for resouce)
+    url($url,$param =[]);link has param
+
