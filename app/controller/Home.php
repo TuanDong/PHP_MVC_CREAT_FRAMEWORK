@@ -20,8 +20,6 @@ class Home extends Controller
 		// $Sales = $this->model('Sales');
 		// $resutl = $Sales->findByID(4);
 		// var_dump($resutl);
-		Session::set('user','nguyen van a');
-		
  		$this->view('home/index',[['fistName'=>'John','lastName'=>'Doe','Email'=>'john@example.com'],['fistName'=>'Mary','lastName'=>'Moe','Email'=>'Mary@example.com'],['fistName'=>'July','lastName'=>'Dooley','Email'=>'July@example.com']]);
  	}	
  	public function test()
