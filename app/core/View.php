@@ -9,6 +9,11 @@ class View
     }
     public function render($viewName,$data)
     {
+        if (!empty($data)) {
+            foreach ($data as $key => $value) {
+                ${$key} = $value;
+            }
+        }
         $viewAry = explode('/',$viewName);
         $viewString = implode(DS,$viewAry);
        if (file_exists(ROOT.DS.'app'.DS.'view'.DS.$viewString.'.php')) {

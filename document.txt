@@ -29,7 +29,7 @@ Name file and name class are the same
     controller default Home, action: index
     Init class controller need extends controller
     class model has a available the method
-    + view param path dislay view in forder view example: $this->view('home/index',$data = []);
+    + view param path dislay view in forder view example: $this->view('home/index',['data'=>$data]); view call $data 
     + model param is model, call model need. example: $this->model('User');
 
 // VIEW 
