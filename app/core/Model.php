@@ -80,4 +80,14 @@ class Model
             return $this->insert($filed);
         }
     }
+	public function get_all()
+    {
+        $results = [];
+        $sql = "SELECT * FROM {$this->table}";
+        $results = $this->_db->query($sql);
+        if ( ! $results->_error) {
+            return $results->_result;
+        }
+        return $results;
+    }
 }
