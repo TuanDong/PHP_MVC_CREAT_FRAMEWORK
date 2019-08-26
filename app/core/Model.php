@@ -62,8 +62,8 @@ class Model
     {
         $results = [];
         $results = $this->_db->query($sql,$bind);
-        if ( ! $results->_error) {
-            return $results->_result;
+        if ( ! $results->error) {
+            return $results->result;
         }
         return $results;
     }
@@ -85,8 +85,8 @@ class Model
         $results = [];
         $sql = "SELECT * FROM {$this->table}";
         $results = $this->_db->query($sql);
-        if ( ! $results->_error) {
-            return $results->_result;
+        if ( ! $results->error) {
+            return $results->result;
         }
         return $results;
     }
