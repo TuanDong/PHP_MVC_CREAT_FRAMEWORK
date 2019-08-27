@@ -7,12 +7,13 @@ Name file and name class are the same
     declare filed $table = 'table name';
     + find, findFirst params array
         ['condition'=>['$filed = ?'],'bind'=>[$valuesFiled],'order'=>[$filedOrder = ''],'limit'=>[$number='']]
-    + findByID param PRIMARY KEY
-    + insert params array filedName and valuesFiled example ['id'=>'12','decription'='',..] note: id, decription is column name in table database
-    + delete param PRIMARY KEY
-    + update param PRIMARY KEY and field name, values field example (1,['decription'='',..]) note: decription is column name in table database
-    + query params command line sql and param bind in sql example ('select * from table wherr id = ?',[1])
-    + save model has  property in tabe database, you can set values of property. If property id exist is update and not exit insert
+        return object
+    + findByID param PRIMARY KEY return object
+    + insert params array filedName and valuesFiled example ['id'=>'12','decription'='',..] note: id, decription is column name in table database return bool
+    + delete param PRIMARY KEY return bool
+    + update param PRIMARY KEY and field name, values field example (1,['decription'='',..]) note: decription is column name in table database return bool
+    + query params command line sql and param bind in sql example ('select * from table wherr id = ?',[1]) return array
+    + save model has  property in tabe database, you can set values of property. If property id exist is update and not exit insert return bool
     example:
         * update
         $this->id = 1;

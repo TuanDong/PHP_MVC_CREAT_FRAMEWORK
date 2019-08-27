@@ -62,8 +62,8 @@ class Model
     {
         $results = [];
         $results = $this->_db->query($sql,$bind);
-        if ( ! $results->error) {
-            return $results->result;
+        if ( ! $results->error()) {
+            return $results->results();
         }
         return $results;
     }
