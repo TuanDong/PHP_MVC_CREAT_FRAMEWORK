@@ -19,5 +19,10 @@ class Controller
 		$init_view = new View();
 		return $init_view->render($view,$data);
 	}
+
+	public function JsonResponse ($data = '')
+    {
+        echo json_encode($data);
+    }
 }
  ?>
