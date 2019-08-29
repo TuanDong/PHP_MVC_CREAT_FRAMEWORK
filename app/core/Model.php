@@ -14,6 +14,7 @@ class Model
         $columns = $this->_db->get_columns($this->table);
         foreach ($columns as $column) {
             $this->_columnName[] = $column->Field;
+            $this->{$column->Field} = null;
         }
     }
 
