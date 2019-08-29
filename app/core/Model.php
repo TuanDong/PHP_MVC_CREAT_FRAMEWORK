@@ -47,7 +47,7 @@ class Model
 
     public function delete($id='')
     {
-        if ($id == '' || $this->id == '') return false;
+        if ($id == '' && $this->id == '') return false;
         $id = ($id == '')? $this->id:$id;
         return $this->_db->delete($this->table,$id);
     }
