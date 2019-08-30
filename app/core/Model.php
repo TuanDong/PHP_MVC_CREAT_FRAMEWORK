@@ -73,7 +73,9 @@ class Model
     {       
         $filed = [];
         foreach ($this->_columnName as $column) {
-            $filed[$column] = $this->$column;
+            if (! empty($this->$column)) {
+                $filed[$column] = $this->$column;
+            }
         }
         if (property_exists($this,'id') && $this->id != '') {
             return $this->update($this->id,$filed);
