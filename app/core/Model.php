@@ -56,7 +56,8 @@ class Model
     public function update($id,$filed)
     {
         if ($id == '' ||empty( $filed)) return false;
-        return $this->_db->update($this->table,$id,$filed);
+        $results = $this->_db->update($this->table,$id,$filed);
+        return $results;
     }
     
     public function query($sql,$bind=[])
