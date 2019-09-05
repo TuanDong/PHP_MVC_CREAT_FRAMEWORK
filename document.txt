@@ -6,7 +6,7 @@ Name file and name class are the same
     class model has a available the method
     declare filed $table = 'table name';
     + find, findFirst params array
-        ['condition'=>['$filed = ?'],'bind'=>[$valuesFiled],'order'=>[$filedOrder = ''],'limit'=>[$number='']]
+        ['conditions'=>['$filed = ?'],'bind'=>[$valuesFiled],'order'=>[$filedOrder = ''],'limit'=>[$number='']]
         return object
     + findByID param PRIMARY KEY return object
     + insert params array filedName and valuesFiled example ['id'=>'12','decription'='',..] note: id, decription is column name in table database return bool
