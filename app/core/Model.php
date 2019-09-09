@@ -21,6 +21,9 @@ class Model
     public function find($params) {
         $results = [];
         $resultsQuery = $this->_db->find($this->table,$params);
+        if (! $resultsQuery) {
+            return $results;
+        }
         foreach ($resultsQuery as $resutl) {
            $obj = new class{};
            foreach ($resutl as $key => $value) {
